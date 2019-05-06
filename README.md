@@ -74,3 +74,49 @@ make install
 cd
 </pre>
 
+5. Устанавливаем ffmpeg.
+
+Удаляем файлы repo atrpms (offline)
+<pre>
+/etc/yum.repos.d
+</pre>
+Далее:
+<pre>
+yum repolist - посмотреть список (уточняем есть ли в списке atrpms)
+yum clean all - очистить кеш 
+yum makecache - создать кеш
+</pre>
+
+Создаем repo: 
+<pre>
+yum install http://repo.okay.com.mx/centos/6/x86_64/release/okay-release-1-1.noarch.rpm
+</pre>
+Или руками пишем любым редактором: 
+<pre>
+[okay]
+name=Extra OKay Packages for Enterprise Linux - $basearch
+baseurl=http://repo.okay.com.mx/centos/$releasever/$basearch/release
+failovermethod=priority
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-OKAY
+
+[okay-debuginfo]
+name=Extra OKay Packages for Enterprise Linux - $basearch - Debug
+baseurl=http://repo.okay.com.mx/centos/$releasever/$basearch/debug
+failovermethod=priority
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-OKAY
+gpgcheck=1
+</pre>
+
+Далее:
+<pre>
+yum install ffmpeg
+</pre>
+Если ранее производились какие либо действия по установке ffmpeg - то возвращаемся к очистке yum и созданию нового кеша yum.
+
+6. Копируем stat.xsl (обращаем также внимание на 791b613)
+<pre>
+cp /root/nginx-rtmp-module-master/arut-nginx-rtmp-module-791b613/stat.xsl /etc/nginx
+</pre>

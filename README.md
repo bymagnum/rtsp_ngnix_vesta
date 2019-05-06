@@ -40,4 +40,37 @@ wget http://nginx.org/download/nginx-1.10.2.tar.gz
 tar -xzvf nginx-1.10.2.tar.gz
 </pre>
 
+скачиваем nginx-rtmp-module (https://github.com/arut/nginx-rtmp-module):
+
+<pre>
+wget https://github.com/arut/nginx-rtmp-module/zipball/master -O nginx-rtmp-module-master.zip
+</pre>
+
+распаковываем:
+<pre>
+unzip nginx-rtmp-module-master.zip -d nginx-rtmp-module-master
+</pre>
+
+переходим в папку распакованного nginx-1.10.2:
+
+<pre>
+cd nginx-1.10.2
+</pre>
+
+собираем
+
+(необходимо изменить arut-nginx-rtmp-module-43f1e42 - последние значения на свои):
+<pre>
+./configure --prefix=/usr --add-module=../nginx-rtmp-module-master/arut-nginx-rtmp-module-43f1e42/ --pid-path=/var/run/nginx.pid --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log --with-http_ssl_module
+</pre>
+
+если ошибок нет, идем дальше:
+<pre>
+make
+make install
+</pre>
+переходим в root папку:
+<pre>
+cd
+</pre>
 

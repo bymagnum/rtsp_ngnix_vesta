@@ -28,8 +28,16 @@ yum install rtmpdump -y
 yum update -y
 </pre>
 
+4. Переходим к сборке и компилированию nginx + rtmp 
+скачиваем nginx:
+<pre>
+wget http://nginx.org/download/nginx-1.10.2.tar.gz
+</pre>
 
+распаковываем:
 
-
+<pre>
+tar -xzvf nginx-1.10.2.tar.gz
+</pre>
 
 

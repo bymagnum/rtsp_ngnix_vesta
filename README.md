@@ -2,11 +2,11 @@
 
 1. Инсталируем ОС.
 
-2. Инсталируем Vesta Panel без nginx
+2. Инсталируем Vesta Panel без nginx (fail2ban - можете отключить изначально, мое предпочтение - вкл. остальные службы - по усмотрению)
 <pre>
 curl -O http://vestacp.com/pub/vst-install.sh
 
-bash vst-install.sh --nginx no --apache yes --phpfpm no --named yes --remi yes --vsftpd yes --proftpd no --iptables yes --fail2ban yes --quota no --exim yes --dovecot yes --spamassassin no --clamav yes --softaculous yes --mysql yes --postgresql no --hostname localhost.ltd --email exemple@domain.ru --force
+bash vst-install.sh --nginx yes --apache yes --phpfpm no --named yes --remi yes --vsftpd yes --proftpd no --iptables yes --fail2ban yes --quota no --exim yes --dovecot yes --spamassassin no --clamav yes --softaculous yes --mysql yes --postgresql no --hostname localhost.ltd --email exemple@domain.ru --force
 </pre>
 
 3. Устанавливаем через SSH: <br>

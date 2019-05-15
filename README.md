@@ -64,11 +64,6 @@ cd nginx-1.10.2
 ./configure --prefix=/usr --add-module=../nginx-rtmp-module-master/arut-nginx-rtmp-module-43f1e42/ --pid-path=/var/run/nginx.pid --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log --with-http_ssl_module
 </pre>
 
-копируем stat.xsl (обращаем также внимание на 791b613)
-<pre>
-cp /root/nginx-rtmp-module-master/arut-nginx-rtmp-module-791b613/stat.xsl /etc/nginx
-</pre>
-
 если ошибок нет, идем дальше:
 <pre>
 make
@@ -78,6 +73,14 @@ make install
 <pre>
 cd
 </pre>
+
+
+копируем stat.xsl (обращаем также внимание на 791b613)
+<pre>
+cp /root/nginx-rtmp-module-master/arut-nginx-rtmp-module-791b613/stat.xsl /etc/nginx
+</pre>
+
+
 
 5. Устанавливаем ffmpeg.
 
